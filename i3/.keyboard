@@ -1,0 +1,4 @@
+Model="pc105"
+Layout="us,tr"
+Variant=""
+Options="grp:alt_shift_toggle, caps:ctrl_modifier"
