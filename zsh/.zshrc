@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -108,82 +108,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vi="nvim"
-alias vim="nvim"
-alias v="nvim"
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# alias for nvim
-cv () {
-  NVIM_APPNAME="nvim.chad" nvim "$@"
-}
-av () {
-  NVIM_APPNAME="nvim.astro" nvim "$@"
-}
-nv () {
-  NVIM_APPNAME="nvim.bak" nvim "$@"
-}
-ntest () {
-  NVIM_APPNAME="nvim.test" nvim "$@"
-}
-myv () {
-  NVIM_APPNAME="nvim.my" nvim "$@"
-}
-
-# alias for tmux
-t () {
-  if [ -z "$1" ]; then
-    tmux new-session -As main\; choose-tree
-  else
-    tmux new-session -As "$1"\; choose-tree
-  fi
-}
-
-# git repository greeter
-last_repository=
-check_directory_for_new_repository() {
-	current_repository=$(git rev-parse --show-toplevel 2> /dev/null)
-	
-	if [ "$current_repository" ] && \
-	   [ "$current_repository" != "$last_repository" ]; then
-		onefetch
-	fi
-	last_repository=$current_repository
-}
-cd() {
-	builtin cd "$@"
-	check_directory_for_new_repository
-}
-LFCD="${HOME}/.config/lf/lfcd.sh"
-if [ -f "$LFCD" ]; then
-    source "$LFCD"
-fi
-
-# eval "$(github-copilot-cli alias -- "$0")"
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
 
 eval "$(starship init zsh)"
 fastfetch
-
-# zsh parameter completion for the dotnet CLI
-_dotnet_zsh_complete()
-{
-  local completions=("$(dotnet complete "$words")")
-
-  # If the completion list is empty, just continue with filename selection
-  if [ -z "$completions" ]
-  then
-    _arguments '*::arguments: _normal'
-    return
-  fi
-
-  # This is not a variable assignment, don't remove spaces!
-  _values = "${(ps:\n:)completions}"
-}
-
-compdef _dotnet_zsh_complete dotnet
-
-export PATH=$PATH:/home/atduyar/.spicetify
