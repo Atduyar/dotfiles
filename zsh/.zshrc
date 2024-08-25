@@ -75,7 +75,6 @@ plugins=(
 	git
 	zsh-autosuggestions
 	sudo
-	zsh-cargo-completion
 	web-search
 	jsontools
 	copyfile
