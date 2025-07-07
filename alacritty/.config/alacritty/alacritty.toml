@@ -1,0 +1,30 @@
+
+[env]
+TERM = "xterm-256color"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[terminal.shell]
+program = "/bin/bash"
+
+[window]
+opacity = 0.9
+
+[general]
+import = ["/home/atduyar/.config/alacritty/themes/themes/github_dark_default.toml"]
+
+[terminal]

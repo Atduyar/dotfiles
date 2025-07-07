@@ -9,7 +9,7 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
-  - ~/.config/alacritty/themes/themes/github_dark_default.yaml
+  - ~/.config/alacritty/themes/themes/github_dark_default.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -198,7 +198,7 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+# colors:
   # Default colors
   #primary:
   #  background: '#1d1f21'
