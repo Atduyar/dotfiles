@@ -19,7 +19,7 @@ family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
 [terminal.shell]
-program = "/bin/bash"
+program = "/usr/bin/zsh"
 
 [window]
 opacity = 0.9
