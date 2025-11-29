@@ -1,10 +1,16 @@
 # Autoloads
 autoload run-help
 unalias run-help
+# Disable auto search of not found command
+unset -f command_not_found_handler
 
 # Auto Complation
 fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
 autoload -Uz compinit && compinit
+
+# This count `/` as word
+autoload -U select-word-style
+select-word-style bash
 
 # Emacs keymap
 bindkey -e
@@ -16,9 +22,11 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 # VSCode like Ctrl + [Left, Right] 
-bindkey "^[[1;5C" emacs-forward-word
+bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
- 
+# Delete key
+bindkey "^[[3~" delete-char
+
 # Prompt
 autoload -Uz add-zsh-hook vcs_info
 setopt prompt_subst
@@ -64,5 +72,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias l="ll -a"
+alias la="ll -a"
 
 fastfetch

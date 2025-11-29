@@ -34,3 +34,13 @@ fi
 if [ -d "$HOME/.dotnet/tools/" ]; then
 	export PATH=$PATH:$HOME/.dotnet/tools/
 fi
+
+# Added for gradle
+if [ -d "/opt/gradle/gradle-9.1.0/" ]; then
+	export PATH=$PATH:/opt/gradle/gradle-9.1.0/bin
+fi
+
+# For uv
+if [ -f "$HOME/.local/bin/env" ]; then
+	. "$HOME/.local/bin/env"
+fi
